@@ -11,4 +11,8 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+
+
+mv -vf ../mt7620a_phicomm_psg1218.dtsi ./target/linux/ramips/dts/mt7620a_phicomm_psg1218.dtsi
+mv -vf ../mt7620.mk ./target/linux/ramips/image/mt7620.mk
