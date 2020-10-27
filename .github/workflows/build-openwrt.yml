@@ -80,6 +80,14 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        
+        # for 16MB flash below ######################
+        
+        [ -e mt7620a_phicomm_psg1218.dtsi ] && mv -vf mt7620a_phicomm_psg1218.dtsi openwrt/target/linux/ramips/dts/mt7620a_phicomm_psg1218.dtsi
+        [ -e mt7620.mk ] && mv -vf mt7620.mk openwrt/target/linux/ramips/image/mt7620.mk
+        
+        # for 16MB flash above ######################
+        
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
